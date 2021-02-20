@@ -1,5 +1,5 @@
 # MyRetail: 
-Exposes  REST api endpoints,  for creating/updating/retrieving products with price. 
+Publishes  REST API endpoints,  for creating/updating/retrieving products with price. 
 
 Technologies Used:
 
@@ -17,8 +17,8 @@ Pre-requisite:  Postgres need to be installed
 2. Update the `application.yaml` file under resources directory with respective Postgres details.  
 3. Run the `MyretailApplication`, this will bring up the application and can be accessed via below URL:  
 
-http://localhost:8080/shopping/products
-http://localhost:8080/shopping/product?productId=16752456
+*http://localhost:8080/shopping/products
+*http://localhost:8080/shopping/product?productId=16752456
 
 End points: 
 - GET:  /shopping/products/  retreives all product details  
@@ -27,10 +27,10 @@ End points:
 - PUT: /shopping/product?productId={id} updates the product with new information provided in the request  
 - DELETE: /shopping/product?productId={id} deletes the product  
 
-For more details please refer to [myretail-sepcification](src/api-spec/myRetail-swagger.yaml)  
+For more details please refer to src/api-spec/myRetail-swagger.yaml
 
 The following actions can be performed:  
-* Responds to an HTTP GET request at "/products/" to retrive all product details and "/product?productId={id}" to retrieve specific product details and delivers the product data as JSON, where {id} will be a number.  
+* Responds to an HTTP GET request  "/shopping/products/" to retrieve all product details and "/product?productId={id}" to retrieve specific product details and delivers the product data as JSON, where {id} will be a number.  
 * Example response:
 
 {
