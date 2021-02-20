@@ -15,5 +15,5 @@ public class CurrentPrice {
 	public void setCurrency_code(String currency_code) {
 		this.currency_code = currency_code;
 	}
-	
+
 }

@@ -1,17 +1,21 @@
 package com.targetstudy.myretail.business.domain;
 
 public class ProductPrice {
+
+	public ProductPrice(Long id, String name, CurrentPrice current_price) {
+		super();
+		Id = id;
+		Name = name;
+		this.current_price = current_price;
+	}
+
+	public ProductPrice() {
+		super();
+	}
+
 	private Long Id;
 	private String Name;
 	private CurrentPrice current_price;
-
-	public Long getId() {
-		return Id;
-	}
-
-	public void setId(Long id) {
-		Id = id;
-	}
 
 	public String getName() {
 		return Name;
@@ -29,5 +33,12 @@ public class ProductPrice {
 		this.current_price = current_price;
 	}
 
-	
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
 }

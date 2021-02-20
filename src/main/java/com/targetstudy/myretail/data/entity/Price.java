@@ -2,25 +2,42 @@ package com.targetstudy.myretail.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
+
+
 @Entity
-@Table(name="Price")
+@Table(name = "Price")
 public class Price {
+
 	@Id
-	@Column(name="PRICE_ID")
+	@Column(name = "PRICE_ID")
 	private long priceId;
-	
-	@Column(name="PRODUCT_ID")
+
+	@NotNull
+	@Column(name = "PRODUCT_ID")
 	private long productId;
 
-	@Column(name="PRICE_VALUE")
+	@Column(name = "PRICE_VALUE")
 	private float priceValue;
-	
-	@Column(name="CURRENCY_CODE")
+
+	public Price() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Price(long priceId, long productId, float priceValue, String currencyCode) {
+		super();
+		this.priceId = priceId;
+		this.productId = productId;
+		this.priceValue = priceValue;
+		this.currencyCode = currencyCode;
+	}
+
+	@Column(name = "CURRENCY_CODE")
 	private String currencyCode;
 
 	public long getPriceId() {

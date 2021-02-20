@@ -5,21 +5,35 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name="Product")
 public class Product {
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@Column(name="PRODUCT_ID")
-	private long productId;
+	private Long productId;
 	
+	@NotNull
 	@Column(name="NAME")
 	private String name;
 
-	public long getProductId() {
+	public Product(Long productId, String name) {
+		super();
+		this.productId = productId;
+		this.name = name;
+	}
+
+	public Long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(long productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
@@ -30,5 +44,6 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+
 }
