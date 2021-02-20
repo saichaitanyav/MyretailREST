@@ -17,8 +17,8 @@ Pre-requisite:  Postgres need to be installed
 2. Update the `application.yaml` file under resources directory with respective Postgres details.  
 3. Run the `MyretailApplication`, this will bring up the application and can be accessed via below URL:  
 
-*http://localhost:8080/shopping/products
-*http://localhost:8080/shopping/product?productId=16752456
+-http://localhost:8080/shopping/products
+-http://localhost:8080/shopping/product?productId=16752456
 
 End points: 
 - GET:  /shopping/products/  retreives all product details  
