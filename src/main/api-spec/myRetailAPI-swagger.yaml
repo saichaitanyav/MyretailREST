@@ -1,0 +1,105 @@
+swagger: "2.0"
+info:
+  description: "This is a myRetail API"
+  version: "1.0.0"
+  title: "Swagger MyRetailAPI"
+host: "myRetail.swagger.io"
+basePath: "/v2"
+tags:
+- name: "Product"
+  description: "Everything about Products"
+schemes:
+- "http"
+paths:
+  /shopping/product:
+    post:
+      tags:
+      - "product"
+      summary: "Add a new product to the store"
+      description: ""
+      operationId: "addProduct"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+      - "product"
+      summary: "Update an existing product"
+      description: ""
+      operationId: "updateProduct"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "400":
+          description: "Invalid ID provided"
+        "404":
+          description: "Product not found"
+        "405":
+          description: "Validation exception"
+  /shopping/products?productId={Id}:
+    get:
+      tags:
+      - "product"
+      summary: "Find product by ID"
+      description: "Returns a single product"
+      operationId: "getProductById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of product to return"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Product"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+definitions:  
+  Price:
+    type: "object"
+    properties:
+      value:
+        type: "number"
+        format: "float"
+      currency_Code:
+        type: "string"
+        example: "USD"
+
+  Product:
+    type: "object"
+    required:
+    - "id"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+        example: "productName"
+      current_price:
+        $ref: "#/definitions/Price"
