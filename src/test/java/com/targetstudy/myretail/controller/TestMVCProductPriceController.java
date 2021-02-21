@@ -83,7 +83,7 @@ public class TestMVCProductPriceController {
 				.thenReturn(getMockProduct());
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/shopping/product")
-				.accept(MediaType.APPLICATION_JSON).content(mapToJson(mapToJson(getMockProduct())))
+				.accept(MediaType.APPLICATION_JSON).content(mapToJson(getMockProduct()))
 				.contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();

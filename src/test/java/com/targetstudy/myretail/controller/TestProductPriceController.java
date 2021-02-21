@@ -104,6 +104,8 @@ public class TestProductPriceController {
 
 		ResponseEntity<ProductPrice> priceProductcreated = productPriceController.createProduct(priceOfProduct);
 
+		assertNotNull(priceProductcreated);
+		
 		assertEquals(HttpStatus.CREATED, priceProductcreated.getStatusCode());
 
 	}
