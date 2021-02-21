@@ -67,7 +67,7 @@ public class TestMVCProductPriceController {
 
 	@Test
 	public void getAllProductsTest() throws Exception {
-		Mockito.when(mockProductPriceService.getProducts()).thenReturn(getMockProductList());
+		Mockito.when(mockProductPriceService.getAllProductsWithPrice()).thenReturn(getMockProductList());
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/shopping/products")
 				.accept(MediaType.APPLICATION_JSON).contentType(MediaType.APPLICATION_JSON);

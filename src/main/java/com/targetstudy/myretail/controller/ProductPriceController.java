@@ -32,7 +32,7 @@ public class ProductPriceController {
 
 	@GetMapping("/shopping/products")
 	public ResponseEntity<List<ProductPrice>> getAllProducts() throws SQLException {
-		List<ProductPrice> listProductPrice = productPriceService.getProducts();
+		List<ProductPrice> listProductPrice = productPriceService.getAllProductsWithPrice();
 		return new ResponseEntity<List<ProductPrice>>(listProductPrice, HttpStatus.OK);
 	}
 

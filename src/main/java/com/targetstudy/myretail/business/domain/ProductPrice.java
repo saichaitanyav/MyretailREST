@@ -1,5 +1,10 @@
 package com.targetstudy.myretail.business.domain;
 
+/**
+ * DAO bean for product with price 
+ * @author saichaitanya
+ *
+ */
 public class ProductPrice {
 
 	public ProductPrice(Long id, String name, CurrentPrice current_price) {

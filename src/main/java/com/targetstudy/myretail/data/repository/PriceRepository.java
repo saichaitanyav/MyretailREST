@@ -7,5 +7,5 @@ import com.targetstudy.myretail.data.entity.Price;
 
 @Repository
 public interface PriceRepository extends CrudRepository<Price, Long> {
-	Price findReservationByProductId(Long productId);
+	Price findPriceByProductId(Long productId);
 }

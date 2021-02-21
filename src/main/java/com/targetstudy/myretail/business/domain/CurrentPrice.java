@@ -1,5 +1,10 @@
 package com.targetstudy.myretail.business.domain;
 
+/**
+ * DAO bean to manage price information
+ * @author saichaitanya
+ *
+ */
 public class CurrentPrice {
 	private float value;
 	private String currency_code;
